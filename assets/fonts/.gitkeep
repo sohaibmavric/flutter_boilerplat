@@ -1,0 +1,8 @@
+# This file ensures the directory is tracked by git
+# Fonts directory for custom fonts following structure:
+# Currently using Google Fonts Inter, but custom fonts would go here:
+# - inter/
+#   - Inter-Regular.ttf
+#   - Inter-Medium.ttf
+#   - Inter-SemiBold.ttf
+#   - Inter-Bold.ttf

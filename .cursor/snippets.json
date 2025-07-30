@@ -1,0 +1,183 @@
+{
+  "Sikila StatelessWidget": {
+    "prefix": "sikilawidget",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "import 'package:sikila/app/l10n/generated/app_localizations.dart';",
+      "import 'package:sikila/core/constants/spacing.dart';",
+      "",
+      "class ${1:WidgetName} extends StatelessWidget {",
+      "  const ${1:WidgetName}({super.key});",
+      "",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    final theme = Theme.of(context);",
+      "    final l10n = AppLocalizations.of(context)!;",
+      "",
+      "    return ${2:Container}(",
+      "      padding: EdgeInsetsDirectional.all(AppSpacing.spaceL),",
+      "      child: ${3:// Implementation}",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Creates a Sikila-compliant StatelessWidget with theme and localization"
+  },
+  "Sikila StatefulWidget": {
+    "prefix": "sikilastateful",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "import 'package:sikila/app/l10n/generated/app_localizations.dart';",
+      "import 'package:sikila/core/constants/spacing.dart';",
+      "",
+      "class ${1:WidgetName} extends StatefulWidget {",
+      "  const ${1:WidgetName}({super.key});",
+      "",
+      "  @override",
+      "  State<${1:WidgetName}> createState() => _${1:WidgetName}State();",
+      "}",
+      "",
+      "class _${1:WidgetName}State extends State<${1:WidgetName}> {",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    final theme = Theme.of(context);",
+      "    final l10n = AppLocalizations.of(context)!;",
+      "",
+      "    return ${2:Container}(",
+      "      padding: EdgeInsetsDirectional.all(AppSpacing.spaceL),",
+      "      child: ${3:// Implementation}",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Creates a Sikila-compliant StatefulWidget with theme and localization"
+  },
+  "Sikila Page": {
+    "prefix": "sikilapage",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "import 'package:sikila/app/l10n/generated/app_localizations.dart';",
+      "import 'package:sikila/core/constants/spacing.dart';",
+      "",
+      "class ${1:PageName}Page extends StatelessWidget {",
+      "  const ${1:PageName}Page({super.key});",
+      "",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    final theme = Theme.of(context);",
+      "    final l10n = AppLocalizations.of(context)!;",
+      "",
+      "    return Scaffold(",
+      "      appBar: AppBar(",
+      "        title: Text(l10n.${2:pageTitle}),",
+      "      ),",
+      "      body: Padding(",
+      "        padding: EdgeInsetsDirectional.all(AppSpacing.spaceL),",
+      "        child: ${3:// Page content}",
+      "      ),",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Creates a Sikila-compliant page with AppBar and proper layout"
+  },
+  "Theme Color": {
+    "prefix": "themecolor",
+    "body": [
+      "Theme.of(context).colorScheme.${1:primary}"
+    ],
+    "description": "Access theme color properly"
+  },
+  "Theme Text Style": {
+    "prefix": "themetext",
+    "body": [
+      "Theme.of(context).textTheme.${1:bodyLarge}"
+    ],
+    "description": "Access theme text style properly"
+  },
+  "Localized String": {
+    "prefix": "l10n",
+    "body": [
+      "AppLocalizations.of(context)!.${1:stringKey}"
+    ],
+    "description": "Access localized string"
+  },
+  "RTL Padding": {
+    "prefix": "rtlpadding",
+    "body": [
+      "EdgeInsetsDirectional.${1:all}(AppSpacing.space${2:L})"
+    ],
+    "description": "RTL-aware padding with spacing constants"
+  },
+  "Sikila Container": {
+    "prefix": "sikilacontainer",
+    "body": [
+      "Container(",
+      "  padding: EdgeInsetsDirectional.all(AppSpacing.space${1:L}),",
+      "  decoration: BoxDecoration(",
+      "    color: Theme.of(context).colorScheme.${2:surface},",
+      "    borderRadius: BorderRadius.circular(${3:8}),",
+      "  ),",
+      "  child: ${4:child},",
+      ")"
+    ],
+    "description": "Theme-compliant container with proper styling"
+  },
+  "Sikila Button": {
+    "prefix": "sikilabutton",
+    "body": [
+      "ElevatedButton(",
+      "  onPressed: ${1:onPressed},",
+      "  child: Text(",
+      "    AppLocalizations.of(context)!.${2:buttonText},",
+      "    style: Theme.of(context).textTheme.labelLarge,",
+      "  ),",
+      ")"
+    ],
+    "description": "Theme-compliant button with localized text"
+  },
+  "Sikila Text Field": {
+    "prefix": "sikilatextfield",
+    "body": [
+      "TextFormField(",
+      "  decoration: InputDecoration(",
+      "    labelText: AppLocalizations.of(context)!.${1:labelText},",
+      "    hintText: AppLocalizations.of(context)!.${2:hintText},",
+      "  ),",
+      "  validator: ${3:validator},",
+      "  onChanged: ${4:onChanged},",
+      ")"
+    ],
+    "description": "Theme-compliant text field with localization"
+  },
+  "Feature Structure": {
+    "prefix": "sikilafeature",
+    "body": [
+      "// Feature: ${1:FeatureName}",
+      "// Structure:",
+      "// features/${1:feature_name}/",
+      "// ├── data/",
+      "// │   ├── models/",
+      "// │   ├── repositories/",
+      "// │   └── providers/",
+      "// └── presentation/",
+      "//     ├── pages/",
+      "//     ├── widgets/",
+      "//     └── state/"
+    ],
+    "description": "Comment template for feature structure"
+  },
+  "Error Handling": {
+    "prefix": "sikilaerror",
+    "body": [
+      "try {",
+      "  ${1:// risky operation}",
+      "} catch (e) {",
+      "  // Log error appropriately",
+      "  debugPrint('Error in ${2:operation}: $e');",
+      "  ${3:// Handle error}",
+      "}"
+    ],
+    "description": "Proper error handling pattern"
+  }
+}

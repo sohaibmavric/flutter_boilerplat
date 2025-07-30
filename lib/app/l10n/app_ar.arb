@@ -1,0 +1,248 @@
+{
+  "@@locale": "ar",
+  "appTitle": "سيكيلا",
+  "@appTitle": {
+    "description": "عنوان التطبيق"
+  },
+  "welcome": "مرحباً",
+  "@welcome": {
+    "description": "رسالة ترحيب"
+  },
+  "hello": "مرحبا",
+  "@hello": {
+    "description": "رسالة تحية"
+  },
+  "settings": "الإعدادات",
+  "@settings": {
+    "description": "عنوان صفحة الإعدادات"
+  },
+  "language": "اللغة",
+  "@language": {
+    "description": "خيار اختيار اللغة"
+  },
+  "theme": "المظهر",
+  "@theme": {
+    "description": "خيار اختيار المظهر"
+  },
+  "light": "فاتح",
+  "@light": {
+    "description": "خيار المظهر الفاتح"
+  },
+  "dark": "داكن",
+  "@dark": {
+    "description": "خيار المظهر الداكن"
+  },
+  "system": "النظام",
+  "@system": {
+    "description": "خيار مظهر النظام"
+  },
+  "save": "حفظ",
+  "@save": {
+    "description": "نص زر الحفظ"
+  },
+  "cancel": "إلغاء",
+  "@cancel": {
+    "description": "نص زر الإلغاء"
+  },
+  "ok": "موافق",
+  "@ok": {
+    "description": "نص زر الموافقة"
+  },
+  "error": "خطأ",
+  "@error": {
+    "description": "عنوان رسالة الخطأ"
+  },
+  "success": "نجح",
+  "@success": {
+    "description": "عنوان رسالة النجاح"
+  },
+  "loading": "جارٍ التحميل...",
+  "@loading": {
+    "description": "نص مؤشر التحميل"
+  },
+  "dashboard": "لوحة التحكم",
+  "@dashboard": {
+    "description": "تبويب لوحة التحكم"
+  },
+  "english": "English",
+  "@english": {
+    "description": "خيار اللغة الإنجليزية"
+  },
+  "arabic": "العربية",
+  "@arabic": {
+    "description": "خيار اللغة العربية"
+  },
+  "themeSettings": "إعدادات المظهر",
+  "@themeSettings": {
+    "description": "عنوان قسم إعدادات المظهر"
+  },
+  "languageSettings": "إعدادات اللغة",
+  "@languageSettings": {
+    "description": "عنوان قسم إعدادات اللغة"
+  },
+  "selectTheme": "اختر المظهر",
+  "@selectTheme": {
+    "description": "مطالبة اختيار المظهر"
+  },
+  "selectLanguage": "اختر اللغة",
+  "@selectLanguage": {
+    "description": "مطالبة اختيار اللغة"
+  },
+  "welcomeToDashboard": "مرحباً بك في لوحة التحكم! هنا يمكنك عرض جميع معلوماتك المهمة.",
+  "@welcomeToDashboard": {
+    "description": "وصف ترحيب لوحة التحكم"
+  },
+  "quickStats": "إحصائيات سريعة",
+  "@quickStats": {
+    "description": "عنوان قسم الإحصائيات السريعة"
+  },
+  "totalItems": "إجمالي العناصر",
+  "@totalItems": {
+    "description": "تسمية إحصائية إجمالي العناصر"
+  },
+  "activeTasks": "المهام النشطة",
+  "@activeTasks": {
+    "description": "تسمية إحصائية المهام النشطة"
+  },
+  "completed": "مكتمل",
+  "@completed": {
+    "description": "تسمية إحصائية مكتمل"
+  },
+  "pending": "معلق",
+  "@pending": {
+    "description": "تسمية إحصائية معلق"
+  },
+  "recentActivity": "النشاط الأخير",
+  "@recentActivity": {
+    "description": "عنوان قسم النشاط الأخير"
+  },
+  "activity": "نشاط",
+  "@activity": {
+    "description": "تسمية عنصر النشاط"
+  },
+  "activityDescription": "وصف النشاط",
+  "@activityDescription": {
+    "description": "وصف عنصر النشاط"
+  },
+  "hoursAgo": "س مضت",
+  "@hoursAgo": {
+    "description": "مؤشر وقت ساعات مضت"
+  },
+  "appInformation": "معلومات التطبيق",
+  "@appInformation": {
+    "description": "عنوان قسم معلومات التطبيق"
+  },
+  "version": "الإصدار",
+  "@version": {
+    "description": "تسمية إصدار التطبيق"
+  },
+  "build": "البناء",
+  "@build": {
+    "description": "تسمية بناء التطبيق"
+  },
+  "development": "تطوير",
+  "@development": {
+    "description": "نوع بناء التطوير"
+  },
+  "testAction": "إجراء تجريبي",
+  "@testAction": {
+    "description": "نص زر الإجراء التجريبي"
+  },
+  "versionNumber": "1.0.0",
+  "@versionNumber": {
+    "description": "رقم إصدار التطبيق"
+  },
+  "statisticsOverview": "نظرة عامة على الإحصائيات",
+  "@statisticsOverview": {
+    "description": "عنوان قسم الإحصائيات"
+  },
+  "totalUsers": "إجمالي المستخدمين",
+  "@totalUsers": {
+    "description": "تسمية مقياس إجمالي المستخدمين"
+  },
+  "revenue": "الإيرادات",
+  "@revenue": {
+    "description": "تسمية مقياس الإيرادات"
+  },
+  "tasks": "المهام",
+  "@tasks": {
+    "description": "تسمية مقياس المهام"
+  },
+  "growth": "النمو",
+  "@growth": {
+    "description": "تسمية مقياس النمو"
+  },
+  "quickActions": "الإجراءات السريعة",
+  "@quickActions": {
+    "description": "عنوان قسم الإجراءات السريعة"
+  },
+  "createPost": "إنشاء منشور",
+  "@createPost": {
+    "description": "عنوان إجراء إنشاء منشور"
+  },
+  "addNewContent": "إضافة محتوى جديد",
+  "@addNewContent": {
+    "description": "وصف إجراء إنشاء منشور"
+  },
+  "manageUsers": "إدارة المستخدمين",
+  "@manageUsers": {
+    "description": "عنوان إجراء إدارة المستخدمين"
+  },
+  "userAdministration": "إدارة المستخدمين",
+  "@userAdministration": {
+    "description": "وصف إجراء إدارة المستخدمين"
+  },
+  "viewReports": "عرض التقارير",
+  "@viewReports": {
+    "description": "عنوان إجراء عرض التقارير"
+  },
+  "analyticsInsights": "التحليلات والرؤى",
+  "@analyticsInsights": {
+    "description": "وصف إجراء عرض التقارير"
+  },
+  "appConfiguration": "تكوين التطبيق",
+  "@appConfiguration": {
+    "description": "وصف إجراء الإعدادات"
+  },
+  "actionTapped": "تم النقر على {action}",
+  "@actionTapped": {
+    "description": "رسالة تم النقر على الإجراء",
+    "placeholders": {
+      "action": {
+        "type": "String"
+      }
+    }
+  },
+  "usersCount": "12,345",
+  "@usersCount": {
+    "description": "عينة عدد المستخدمين"
+  },
+  "revenueAmount": "$45.2K",
+  "@revenueAmount": {
+    "description": "عينة مبلغ الإيرادات"
+  },
+  "tasksCount": "89",
+  "@tasksCount": {
+    "description": "عينة عدد المهام"
+  },
+  "growthPercentage": "23.1%",
+  "@growthPercentage": {
+    "description": "عينة نسبة النمو"
+  },
+  "changePositive12": "+12%",
+  "@changePositive12": {
+    "description": "عينة تغيير إيجابي 12%"
+  },
+  "changePositive8": "+8%",
+  "@changePositive8": {
+    "description": "عينة تغيير إيجابي 8%"
+  },
+  "changeNegative3": "-3%",
+  "@changeNegative3": {
+    "description": "عينة تغيير سلبي 3%"
+  },
+  "changePositive15": "+15%",
+  "@changePositive15": {
+    "description": "عينة تغيير إيجابي 15%"
+  }
+}

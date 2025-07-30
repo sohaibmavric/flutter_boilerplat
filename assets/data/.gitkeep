@@ -1,0 +1,4 @@
+# This file ensures the directory is tracked by git
+# Data directory for static JSON/CSV data files following naming convention:
+# - descriptive_name.json/.csv
+# - countries.json, sample_data.csv, etc.

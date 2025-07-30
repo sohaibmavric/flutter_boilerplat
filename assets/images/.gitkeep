@@ -1,0 +1,4 @@
+# This file ensures the directory is tracked by git
+# Icons directory for custom SVG icons following naming convention:
+# - ic_name.svg for icons
+# - Organized by category subdirectories as needed

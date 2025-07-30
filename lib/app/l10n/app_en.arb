@@ -1,0 +1,248 @@
+{
+  "@@locale": "en",
+  "appTitle": "Sikila",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "welcome": "Welcome",
+  "@welcome": {
+    "description": "Welcome message"
+  },
+  "hello": "Hello",
+  "@hello": {
+    "description": "A greeting message"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings page title"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Language selection option"
+  },
+  "theme": "Theme",
+  "@theme": {
+    "description": "Theme selection option"
+  },
+  "light": "Light",
+  "@light": {
+    "description": "Light theme option"
+  },
+  "dark": "Dark",
+  "@dark": {
+    "description": "Dark theme option"
+  },
+  "system": "System",
+  "@system": {
+    "description": "System theme option"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Save button text"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "ok": "OK",
+  "@ok": {
+    "description": "OK button text"
+  },
+  "error": "Error",
+  "@error": {
+    "description": "Error message title"
+  },
+  "success": "Success",
+  "@success": {
+    "description": "Success message title"
+  },
+  "loading": "Loading...",
+  "@loading": {
+    "description": "Loading indicator text"
+  },
+  "dashboard": "Dashboard",
+  "@dashboard": {
+    "description": "Dashboard navigation tab"
+  },
+  "english": "English",
+  "@english": {
+    "description": "English language option"
+  },
+  "arabic": "العربية",
+  "@arabic": {
+    "description": "Arabic language option"
+  },
+  "themeSettings": "Theme Settings",
+  "@themeSettings": {
+    "description": "Theme settings section title"
+  },
+  "languageSettings": "Language Settings",
+  "@languageSettings": {
+    "description": "Language settings section title"
+  },
+  "selectTheme": "Select Theme",
+  "@selectTheme": {
+    "description": "Theme selection prompt"
+  },
+  "selectLanguage": "Select Language",
+  "@selectLanguage": {
+    "description": "Language selection prompt"
+  },
+  "welcomeToDashboard": "Welcome to your dashboard! Here you can view all your important information.",
+  "@welcomeToDashboard": {
+    "description": "Dashboard welcome description"
+  },
+  "quickStats": "Quick Stats",
+  "@quickStats": {
+    "description": "Quick stats section title"
+  },
+  "totalItems": "Total Items",
+  "@totalItems": {
+    "description": "Total items stat label"
+  },
+  "activeTasks": "Active Tasks",
+  "@activeTasks": {
+    "description": "Active tasks stat label"
+  },
+  "completed": "Completed",
+  "@completed": {
+    "description": "Completed stat label"
+  },
+  "pending": "Pending",
+  "@pending": {
+    "description": "Pending stat label"
+  },
+  "recentActivity": "Recent Activity",
+  "@recentActivity": {
+    "description": "Recent activity section title"
+  },
+  "activity": "Activity",
+  "@activity": {
+    "description": "Activity item label"
+  },
+  "activityDescription": "Description of activity",
+  "@activityDescription": {
+    "description": "Activity item description"
+  },
+  "hoursAgo": "h ago",
+  "@hoursAgo": {
+    "description": "Hours ago time indicator"
+  },
+  "appInformation": "App Information",
+  "@appInformation": {
+    "description": "App information section title"
+  },
+  "version": "Version",
+  "@version": {
+    "description": "App version label"
+  },
+  "build": "Build",
+  "@build": {
+    "description": "App build label"
+  },
+  "development": "Development",
+  "@development": {
+    "description": "Development build type"
+  },
+  "testAction": "Test Action",
+  "@testAction": {
+    "description": "Test action button text"
+  },
+  "versionNumber": "1.0.0",
+  "@versionNumber": {
+    "description": "App version number"
+  },
+  "statisticsOverview": "Statistics Overview",
+  "@statisticsOverview": {
+    "description": "Statistics section title"
+  },
+  "totalUsers": "Total Users",
+  "@totalUsers": {
+    "description": "Total users metric label"
+  },
+  "revenue": "Revenue",
+  "@revenue": {
+    "description": "Revenue metric label"
+  },
+  "tasks": "Tasks",
+  "@tasks": {
+    "description": "Tasks metric label"
+  },
+  "growth": "Growth",
+  "@growth": {
+    "description": "Growth metric label"
+  },
+  "quickActions": "Quick Actions",
+  "@quickActions": {
+    "description": "Quick actions section title"
+  },
+  "createPost": "Create Post",
+  "@createPost": {
+    "description": "Create post action title"
+  },
+  "addNewContent": "Add new content",
+  "@addNewContent": {
+    "description": "Create post action description"
+  },
+  "manageUsers": "Manage Users",
+  "@manageUsers": {
+    "description": "Manage users action title"
+  },
+  "userAdministration": "User administration",
+  "@userAdministration": {
+    "description": "Manage users action description"
+  },
+  "viewReports": "View Reports",
+  "@viewReports": {
+    "description": "View reports action title"
+  },
+  "analyticsInsights": "Analytics & insights",
+  "@analyticsInsights": {
+    "description": "View reports action description"
+  },
+  "appConfiguration": "App configuration",
+  "@appConfiguration": {
+    "description": "Settings action description"
+  },
+  "actionTapped": "{action} tapped",
+  "@actionTapped": {
+    "description": "Action tapped message",
+    "placeholders": {
+      "action": {
+        "type": "String"
+      }
+    }
+  },
+  "usersCount": "12,345",
+  "@usersCount": {
+    "description": "Sample users count"
+  },
+  "revenueAmount": "$45.2K",
+  "@revenueAmount": {
+    "description": "Sample revenue amount"
+  },
+  "tasksCount": "89",
+  "@tasksCount": {
+    "description": "Sample tasks count"
+  },
+  "growthPercentage": "23.1%",
+  "@growthPercentage": {
+    "description": "Sample growth percentage"
+  },
+  "changePositive12": "+12%",
+  "@changePositive12": {
+    "description": "Sample positive change 12%"
+  },
+  "changePositive8": "+8%",
+  "@changePositive8": {
+    "description": "Sample positive change 8%"
+  },
+  "changeNegative3": "-3%",
+  "@changeNegative3": {
+    "description": "Sample negative change 3%"
+  },
+  "changePositive15": "+15%",
+  "@changePositive15": {
+    "description": "Sample positive change 15%"
+  }
+}
