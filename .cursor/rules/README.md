@@ -1,227 +1,153 @@
-# Sikila Flutter Project - Comprehensive Rules & Guidelines
+# Sikila Flutter Documentation
 
-🚨 **THESE RULES ARE NON-NEGOTIABLE AND MUST BE STRICTLY FOLLOWED** 🚨
+This directory contains all the essential documentation for the Sikila Flutter application development. These documents define strict standards that must be followed by all developers working on the project.
 
-You are an expert Flutter developer working on the Sikila mobile application. Every decision, every line of code, and every architectural choice MUST align with these rules.
+## 🚨 MANDATORY RULE - READ BEFORE ANY CODE DEVELOPMENT 🚨
 
-## 🎯 Core Principles (MANDATORY)
+### **ABSOLUTE REQUIREMENT: Before writing ANY code, cursor MUST follow these three documents:**
 
-1. **Design System First**: Every decision must follow the established design system
-2. **Zero Tolerance for Violations**: Any code violating these rules MUST be rejected
-3. **RTL & i18n Ready**: All UI must support Arabic (RTL) and multiple languages
-4. **Performance & Quality**: Write efficient, bug-free, maintainable code
-5. **Consistency Above All**: Maintain uniformity across the entire codebase
+1. **📖 [ARCHITECTURE.md](./ARCHITECTURE.md)** - Code architecture patterns and structure
+2. **🎨 [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md)** - Visual design system rules  
+3. **🧪 [TESTING.md](./TESTING.md)** - Unit testing standards
 
-## 📁 Project Structure (STRICTLY ENFORCED)
+### **⚠️ CRITICAL ENFORCEMENT:**
+- **NO CODE** can be written without consulting these three documents first
+- **ALL DEVELOPMENT** must strictly adhere to the rules defined in these files
+- **ZERO EXCEPTIONS** - This is non-negotiable for code quality and consistency
+- **CODE REVIEW REJECTION** if these guidelines are not followed
 
-```
-lib/
-├── app/
-│   ├── app.dart                # Main application widget
-│   ├── router/                 # Navigation and routing
-│   ├── theme/                  # Theme definitions
-│   └── l10n/                   # Localization files
-├── core/
-│   ├── constants/              # App-wide constants (spacing, etc.)
-│   ├── services/               # Core services (API, state, etc.)
-│   ├── utils/                  # Utility functions
-│   └── widgets/                # Shared, reusable widgets
-├── screens/
-│   └── screen_name/
-│       ├── data/
-│       │   ├── models/
-│       │   ├── repositories/
-│       │   └── providers/
-│       └── presentation/
-│           ├── pages/
-│           ├── widgets/
-│           └── state/          # State management
-└── main.dart                   # App entry point
-```
+---
 
-## 🎨 Design System Compliance (ZERO TOLERANCE)
+## 📚 Documentation Overview
 
-### Colors - ABSOLUTE RULES
-- ❌ **NEVER hardcode colors**: `Color(0xFF...)`, `Colors.red`, etc.
-- ✅ **ONLY use**: `Theme.of(context).colorScheme.*`
-- ✅ **Reference**: Brand, Error, Warning, Success color palettes only
+### 🎨 [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md)
+**Visual Design System Rules**
+- Color palette and theming guidelines
+- Typography and spacing standards  
+- Assets and iconography management
+- Internationalization requirements
+- Accessibility compliance
 
-### Spacing - MANDATORY USAGE
-- ❌ **NEVER hardcode spacing**: `EdgeInsets.all(16)`, `SizedBox(height: 20)`
-- ✅ **ONLY use**: `AppSpacing` constants from `lib/core/constants/spacing.dart`
-- ✅ **Available values**: spaceXXS(2), spaceXS(4), spaceS(8), spaceM(12), spaceL(16), spaceXL(24), spaceXXL(32), spaceXXXL(48)
+### 🏗️ [ARCHITECTURE.md](./ARCHITECTURE.md)
+**Code Architecture Guidelines**
+- Provider ChangeNotifier pattern requirements
+- Centralized models, services, and providers structure
+- UI integration patterns with Provider
+- Exception handling standards
+- File organization rules
 
-### Typography - STRICT ENFORCEMENT
-- ❌ **NEVER hardcode text styles**: `TextStyle(fontSize: 16)`
-- ✅ **ONLY use**: `Theme.of(context).textTheme.*`
-- ✅ **Font family**: Google Fonts "Inter" (defined in theme)
+### 🧪 [TESTING.md](./TESTING.md)  
+**Business Logic Testing Standards**
+- Provider testing requirements (unit + integration)
+- Service and model testing guidelines
+- Test organization and structure
+- Performance and memory testing
+- Business logic focus (NO UI testing)
 
-## 🌐 Internationalization (ZERO TOLERANCE POLICY)
+## 🚨 Compliance Requirements
 
-### 🚨 CRITICAL: ABSOLUTELY NO HARDCODED STRINGS ALLOWED 🚨
+### Zero Tolerance Violations
+- ❌ **FORBIDDEN**: Writing code without reading ARCHITECTURE.md, DESIGN_SYSTEM.md, TESTING.md first
+- ❌ **FORBIDDEN**: Hardcoded colors, spacing, or typography
+- ❌ **FORBIDDEN**: Hardcoded strings (must use localization)
+- ❌ **FORBIDDEN**: StatefulWidget for business logic
+- ❌ **FORBIDDEN**: Direct API calls in UI widgets
+- ❌ **FORBIDDEN**: Models/services/providers outside `core/`
+- ❌ **FORBIDDEN**: Missing business logic tests
 
-**INSTANT REJECTION CRITERIA:**
-- ❌ Any string literals in UI: `'Hello'`, `"Welcome"`, `'Loading...'`, `'Statistics Overview'`
-- ❌ String concatenation in widgets: `'Hello ' + name`
-- ❌ Template strings in UI: `'Count: $count'`, `'$45.2K'`, `'+12%'`
-- ❌ Any user-visible text not from localization
-- ❌ Hardcoded labels: `'Total Users'`, `'Revenue'`, `'Create Post'`
-- ❌ Hardcoded descriptions: `'Add new content'`, `'User administration'`
+### Mandatory Standards
+- ✅ **REQUIRED**: Read and follow all three documentation files before coding
+- ✅ **REQUIRED**: All visual elements from design system
+- ✅ **REQUIRED**: Provider ChangeNotifier pattern exclusively
+- ✅ **REQUIRED**: Centralized architecture in `core/` directory
+- ✅ **REQUIRED**: Comprehensive business logic testing
+- ✅ **REQUIRED**: Proper internationalization support
+- ✅ **REQUIRED**: Accessibility compliance
 
-### 🔍 AUTOMATED DETECTION COMMANDS
+## 📋 Pre-Commit Verification
+
+Before any code commit, verify compliance by running:
+
 ```bash
-# These commands MUST return ZERO results:
-grep -r "Text('.*')" lib/
-grep -r 'Text(".*")' lib/
-grep -r "title: Text('.*')" lib/
-grep -r 'SnackBar.*Text(' lib/
+# 🚨 STEP 1: MANDATORY - Verify documentation has been read
+echo "Have you read ARCHITECTURE.md, DESIGN_SYSTEM.md, and TESTING.md? (y/n)"
+
+# 🚨 STEP 2: Design System Compliance
+grep -r "Color(0x" lib/           # Should return ZERO results
+grep -r "Colors\." lib/           # Should return ZERO results  
+grep -r "Text('.*')" lib/         # Should return ZERO results
+grep -r "EdgeInsets\.all([0-9]" lib/  # Should return ZERO results
+
+# 🚨 STEP 3: Architecture Compliance  
+find lib/screens -name "*.dart" -path "*/models/*"     # Should be empty
+find lib/screens -name "*.dart" -path "*/services/*"   # Should be empty
+find lib/screens -name "*.dart" -path "*/providers/*"  # Should be empty
+
+# 🚨 STEP 4: Testing Coverage
+flutter test test/core/providers/   # All provider tests must pass
 ```
 
-**MANDATORY STRING USAGE:**
-- ✅ **ONLY use**: `AppLocalizations.of(context)!.stringKey`
-- ✅ **ALL strings must exist in**: `app_en.arb` and `app_ar.arb`
-- ✅ **Before coding**: Verify strings exist in `.arb` files
+## 🎯 Development Workflow
 
-**WHAT MUST BE LOCALIZED (NO EXCEPTIONS):**
-- Button text, labels, titles, descriptions
-- Error/success/loading messages
-- Placeholder text, tooltips
-- Any text visible to users
+1. **🚨 MANDATORY FIRST STEP**: Read ARCHITECTURE.md, DESIGN_SYSTEM.md, and TESTING.md completely
+2. **Follow Architecture**: Implement using Provider pattern with centralized core
+3. **Apply Design System**: Use only theme colors, spacing, and typography
+4. **Write Tests**: Create comprehensive business logic tests
+5. **Verify Compliance**: Run verification commands before commit
+6. **Code Review**: Ensure adherence to all standards
 
-## 🎛️ Widget Development Standards
+### ⚠️ CRITICAL REMINDER:
+**NO CODE DEVELOPMENT without first reading and understanding the three mandatory documentation files. This is non-negotiable.**
 
-### Component Requirements
-- ✅ **Standalone components**: All widgets must be self-contained
-- ✅ **const constructors**: Use whenever possible
-- ✅ **Proper keys**: Implement `Key` usage for widgets
-- ✅ **RTL support**: Use `EdgeInsetsDirectional`, `Positioned.directional`
+## 📖 Additional Resources
 
-### Button Standards (MANDATORY)
-- ✅ **Only use**: `FilledButton` (primary) and `OutlinedButton` (secondary)
-- ✅ **Full width by default**: Wrap in `SizedBox(width: double.infinity)`
-- ✅ **Border radius**: 4px (little radius as requested)
-- ✅ **Consistent padding**: Use theme-defined padding
+- **Flutter Provider Documentation**: [pub.dev/packages/provider](https://pub.dev/packages/provider)
+- **Material Design 3**: [m3.material.io](https://m3.material.io)
+- **Flutter Internationalization**: [flutter.dev/docs/development/accessibility-and-localization/internationalization](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
+- **Flutter Testing**: [flutter.dev/docs/testing](https://flutter.dev/docs/testing)
 
-## 📱 Layout & RTL Support (MANDATORY)
+## ⚡ Quick Reference
 
-### RTL Requirements
-- ✅ **Use**: `EdgeInsetsDirectional` instead of `EdgeInsets`
-- ✅ **Use**: `Positioned.directional` instead of `Positioned`
-- ✅ **Test**: All layouts in both LTR and RTL modes
-- ✅ **Direction awareness**: Use `Directionality.of(context)` when needed
-
-## 🔧 Code Quality Standards
-
-### Naming Conventions (STRICT)
-- ✅ **Classes/enums/typedefs**: `PascalCase`
-- ✅ **Variables/methods/parameters**: `camelCase`
-- ✅ **Files/directories**: `snake_case`
-- ✅ **Constants**: `kCamelCase` or `SCREAMING_SNAKE_CASE`
-
-### File Organization
-- ✅ **One main class per file**
-- ✅ **Group related imports**: Flutter, packages, project files
-- ✅ **Relative imports**: For project files
-- ✅ **Barrel exports**: For feature modules
-
-### Performance Requirements
-- ✅ **const widgets**: Use whenever possible
-- ✅ **Lazy loading**: Implement for lists
-- ✅ **Optimized state**: Use proper state management patterns
-
-## 🧪 State Management
-
-### Approved Patterns
-- ✅ **Provider**: For simple state
-- ✅ **BLoC/Cubit**: For complex business logic
-- ✅ **Riverpod**: As alternative to Provider
-
-### Implementation Rules
-- ✅ **Reactive patterns**: If A changes, B should automatically respond
-- ✅ **Stateless widgets**: Prefer with external state
-- ✅ **Immutable state**: Follow immutability principles
-
-## 📦 Dependencies (APPROVED ONLY)
-
-### Core Packages
-- ✅ `flutter_localizations` (i18n)
-- ✅ `intl` (date/number formatting)
-- ✅ `google_fonts` (typography)
-- ✅ `provider`/`flutter_bloc`/`riverpod` (state management)
-- ✅ `shared_preferences` (local storage)
-
-### Package Guidelines
-- ✅ **Evaluate**: maintenance, popularity, compatibility
-- ✅ **Null safety**: Required
-- ✅ **Team approval**: Document choices
-
-## ✅ Review Checklist (MANDATORY BEFORE ANY COMMIT)
-
-**Code MUST be rejected if it contains:**
-- ❌ ANY hardcoded strings in UI (Text, AppBar, SnackBar, etc.)
-- ❌ Hardcoded colors (`Color(0xFF...)`, `Colors.red`)
-- ❌ Hardcoded spacing (`EdgeInsets.all(16)`, `SizedBox(height: 20)`)
-- ❌ Non-theme text styles (`TextStyle(fontSize: 16)`)
-- ❌ Missing RTL support (`EdgeInsets` instead of `EdgeInsetsDirectional`)
-- ❌ Non-approved button types (`ElevatedButton`, `TextButton`)
-- ❌ String interpolation in UI (`'Count: $count'`)
-- ❌ String concatenation in UI (`'Hello ' + name`)
-
-**Code MUST pass:**
-- ✅ Zero hardcoded strings (use l10n)
-- ✅ Only theme colors and spacing
-- ✅ FilledButton/OutlinedButton only
-- ✅ Full-width buttons with 4px radius
-- ✅ EdgeInsetsDirectional usage
-- ✅ Proper const usage
-- ✅ Performance optimizations
-- ✅ RTL layout testing
-
-## 🚨 ENFORCEMENT PROTOCOL
-
-### For Every Code Change:
-1. **Before writing**: Verify strings exist in `.arb` files
-2. **While coding**: Use only approved patterns and components
-3. **Before PR**: Run `flutter analyze` and fix ALL issues
-4. **Code review**: Reject ANY violation immediately
-
-### Violation Response:
-- **Immediate rejection**: Any hardcoded string/color/spacing
-- **Mandatory fix**: Before any other work continues
-- **Re-review**: Required after corrections
-
-## 💫 Quick Reference
-
-### ✅ CORRECT Patterns:
+### Theme Usage
 ```dart
-// Strings
-Text(l10n.welcome)
-
 // Colors
-color: theme.colorScheme.primary
+Theme.of(context).colorScheme.primary
+theme.colorScheme.surface
+
+// Typography  
+theme.textTheme.headlineSmall
+theme.textTheme.bodyLarge
 
 // Spacing
-padding: const EdgeInsetsDirectional.all(AppSpacing.spaceL)
+EdgeInsets.all(AppSpacing.spaceL)
+SizedBox(height: AppSpacing.spaceM)
+```
 
-// Full-width buttons
-SizedBox(
-  width: double.infinity,
-  child: FilledButton(
-    onPressed: onPressed,
-    child: Text(l10n.buttonText),
-  ),
+### Provider Pattern
+```dart
+// Provider Setup
+ChangeNotifierProvider(
+  create: (_) => FeatureProvider()..loadData(),
+  child: FeatureScreen(),
+)
+
+// Consumer Usage
+Consumer<FeatureProvider>(
+  builder: (context, provider, child) {
+    if (provider.isLoading) return LoadingWidget();
+    if (provider.hasError) return ErrorWidget();
+    return DataWidget(provider.data);
+  },
 )
 ```
 
-### ❌ FORBIDDEN Patterns:
+### Localization
 ```dart
-// NEVER do these:
-Text('Welcome')                    // Hardcoded string
-color: Colors.blue                 // Hardcoded color
-padding: EdgeInsets.all(16)        // Hardcoded spacing
-ElevatedButton(...)                // Wrong button type
+// String Usage
+Text(AppLocalizations.of(context)!.welcomeMessage)
+AppBar(title: Text(l10n.settings))
 ```
 
 ---
 
-**Remember: These rules exist to ensure code quality, maintainability, and user experience. Following them strictly is not optional—it's mandatory for project success.**
+**Following these documentation standards ensures consistent, maintainable, and professional Flutter application development.**

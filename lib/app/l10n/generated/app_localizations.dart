@@ -170,6 +170,126 @@ abstract class AppLocalizations {
   /// **'OK'**
   String get ok;
 
+  /// Welcome title on onboarding
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to\nSIKILA'**
+  String get welcomeToSikila;
+
+  /// Health tracking subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Health tracking'**
+  String get healthTracking;
+
+  /// Welcome screen description
+  ///
+  /// In en, this message translates to:
+  /// **'Take control of your health. Log pain, monitor sleep, track blood transfusions, and stay hydrated.\n\nGet medication reminders and health insights to understand your body and make informed choices.'**
+  String get onboardingWelcomeDescription;
+
+  /// Sign up button text
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up For Free'**
+  String get signUpForFree;
+
+  /// Log in button text
+  ///
+  /// In en, this message translates to:
+  /// **'Log In'**
+  String get logIn;
+
+  /// Second onboarding screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Track Your Health'**
+  String get trackYourHealth;
+
+  /// Second onboarding screen subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Comprehensive monitoring'**
+  String get comprehensiveMonitoring;
+
+  /// Second onboarding screen description
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor your daily activities, symptoms, and health metrics in one place. Set reminders and track your progress over time.'**
+  String get onboardingTrackDescription;
+
+  /// Third onboarding screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Stay Motivated'**
+  String get stayMotivated;
+
+  /// Third onboarding screen subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Personalized insights'**
+  String get personalizedInsights;
+
+  /// Third onboarding screen description
+  ///
+  /// In en, this message translates to:
+  /// **'Get personalized recommendations and insights based on your health data. Achieve your wellness goals with smart tracking.'**
+  String get onboardingMotivatedDescription;
+
+  /// Next button text
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// Skip button text
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// Get started button text
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
+  String get getStarted;
+
+  /// Education carousel subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Education'**
+  String get education;
+
+  /// Community carousel subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Community'**
+  String get community;
+
+  /// Health tracking carousel description
+  ///
+  /// In en, this message translates to:
+  /// **'Take control of your health. Log pain, monitor sleep, track blood transfusions, and stay hydrated.\n\nGet medication reminders and health insights to understand your body and make informed choices.'**
+  String get onboardingHealthDescription;
+
+  /// Education carousel description
+  ///
+  /// In en, this message translates to:
+  /// **'Access a library of trusted medical information with engaging articles and videos designed to educate and empower you.'**
+  String get onboardingEducationDescription;
+
+  /// Community carousel description
+  ///
+  /// In en, this message translates to:
+  /// **'Join a thriving community on the Sikila forum! Connect, share experiences, and support others in a space designed for meaningful discussions and shared knowledge.'**
+  String get onboardingCommunityDescription;
+
+  /// Logout button text
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get logout;
+
   /// Error message title
   ///
   /// In en, this message translates to:
@@ -457,6 +577,192 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'+15%'**
   String get changePositive15;
+
+  /// Splash screen welcome message
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Sikila'**
+  String get splashWelcome;
+
+  /// Splash screen tagline
+  ///
+  /// In en, this message translates to:
+  /// **'Your digital companion for modern living'**
+  String get splashTagline;
+
+  /// Splash screen loading message
+  ///
+  /// In en, this message translates to:
+  /// **'Loading your experience...'**
+  String get splashLoading;
+
+  /// Powered by attribution text
+  ///
+  /// In en, this message translates to:
+  /// **'Powered by Flutter'**
+  String get poweredBy;
+
+  /// Morning greeting
+  ///
+  /// In en, this message translates to:
+  /// **'Good Morning'**
+  String get goodMorning;
+
+  /// Afternoon greeting
+  ///
+  /// In en, this message translates to:
+  /// **'Good Afternoon'**
+  String get goodAfternoon;
+
+  /// Evening greeting
+  ///
+  /// In en, this message translates to:
+  /// **'Good Evening'**
+  String get goodEvening;
+
+  /// Default user name
+  ///
+  /// In en, this message translates to:
+  /// **'Sohaib'**
+  String get userName;
+
+  /// Water log section title
+  ///
+  /// In en, this message translates to:
+  /// **'Water Log'**
+  String get waterLog;
+
+  /// Daily goal label
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s Goal'**
+  String get todaysGoal;
+
+  /// Remaining amount label
+  ///
+  /// In en, this message translates to:
+  /// **'Remaining'**
+  String get remaining;
+
+  /// Goal achievement text
+  ///
+  /// In en, this message translates to:
+  /// **'at your goal'**
+  String get atYourGoal;
+
+  /// Log water button text
+  ///
+  /// In en, this message translates to:
+  /// **'Log Water'**
+  String get logWater;
+
+  /// Log pain card title
+  ///
+  /// In en, this message translates to:
+  /// **'Log Pain'**
+  String get logPain;
+
+  /// Log blood card title
+  ///
+  /// In en, this message translates to:
+  /// **'Log Blood'**
+  String get logBlood;
+
+  /// Log medication card title
+  ///
+  /// In en, this message translates to:
+  /// **'Log Medication'**
+  String get logMedication;
+
+  /// Log sleep card title
+  ///
+  /// In en, this message translates to:
+  /// **'Log Sleep'**
+  String get logSleep;
+
+  /// Milliliters unit
+  ///
+  /// In en, this message translates to:
+  /// **'ml'**
+  String get ml;
+
+  /// Default water goal in ml
+  ///
+  /// In en, this message translates to:
+  /// **'2200'**
+  String get waterGoal;
+
+  /// Remaining water amount
+  ///
+  /// In en, this message translates to:
+  /// **'100'**
+  String get waterRemaining;
+
+  /// Log navigation tab
+  ///
+  /// In en, this message translates to:
+  /// **'Log'**
+  String get log;
+
+  /// Explore navigation tab
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get explore;
+
+  /// Profile navigation tab
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// Title for posts section in explore screen
+  ///
+  /// In en, this message translates to:
+  /// **'Latest Posts'**
+  String get explorePostsTitle;
+
+  /// Loading message when fetching posts
+  ///
+  /// In en, this message translates to:
+  /// **'Loading posts...'**
+  String get loadingPosts;
+
+  /// Error message when posts fail to load
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading posts'**
+  String get errorLoadingPosts;
+
+  /// Button text to retry loading posts
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retryLoadingPosts;
+
+  /// Message when no posts are available
+  ///
+  /// In en, this message translates to:
+  /// **'No posts found'**
+  String get noPostsFound;
+
+  /// Instruction to refresh posts list
+  ///
+  /// In en, this message translates to:
+  /// **'Pull down to refresh'**
+  String get refreshPosts;
+
+  /// Post author display with user ID
+  ///
+  /// In en, this message translates to:
+  /// **'By User {userId}'**
+  String postAuthor(int userId);
+
+  /// Read more button text for post cards
+  ///
+  /// In en, this message translates to:
+  /// **'Read more'**
+  String get readMore;
 }
 
 class _AppLocalizationsDelegate

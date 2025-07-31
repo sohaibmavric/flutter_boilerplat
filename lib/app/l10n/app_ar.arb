@@ -48,6 +48,86 @@
   "@ok": {
     "description": "نص زر الموافقة"
   },
+  "welcomeToSikila": "مرحباً بك في\nسِكيلا",
+  "@welcomeToSikila": {
+    "description": "عنوان الترحيب في التعريف بالتطبيق"
+  },
+  "healthTracking": "تتبع الصحة",
+  "@healthTracking": {
+    "description": "عنوان فرعي لتتبع الصحة"
+  },
+  "onboardingWelcomeDescription": "تحكم في صحتك. سجّل الألم، راقب النوم، تتبع نقل الدم، وحافظ على الترطيب.\n\nاحصل على تذكيرات الأدوية ورؤى صحية لفهم جسمك واتخاذ قرارات مدروسة.",
+  "@onboardingWelcomeDescription": {
+    "description": "وصف شاشة الترحيب"
+  },
+  "signUpForFree": "اشترك مجاناً",
+  "@signUpForFree": {
+    "description": "نص زر الاشتراك"
+  },
+  "logIn": "تسجيل الدخول",
+  "@logIn": {
+    "description": "نص زر تسجيل الدخول"
+  },
+  "trackYourHealth": "تتبع صحتك",
+  "@trackYourHealth": {
+    "description": "عنوان الشاشة الثانية للتعريف"
+  },
+  "comprehensiveMonitoring": "مراقبة شاملة",
+  "@comprehensiveMonitoring": {
+    "description": "عنوان فرعي للشاشة الثانية"
+  },
+  "onboardingTrackDescription": "راقب أنشطتك اليومية والأعراض والمؤشرات الصحية في مكان واحد. اضبط التذكيرات وتتبع تقدمك مع الوقت.",
+  "@onboardingTrackDescription": {
+    "description": "وصف شاشة التتبع"
+  },
+  "stayMotivated": "ابق متحمساً",
+  "@stayMotivated": {
+    "description": "عنوان الشاشة الثالثة للتعريف"
+  },
+  "personalizedInsights": "رؤى شخصية",
+  "@personalizedInsights": {
+    "description": "عنوان فرعي للشاشة الثالثة"
+  },
+  "onboardingMotivatedDescription": "احصل على توصيات ورؤى شخصية بناءً على بياناتك الصحية. حقق أهدافك الصحية بتتبع ذكي.",
+  "@onboardingMotivatedDescription": {
+    "description": "وصف شاشة التحفيز"
+  },
+  "next": "التالي",
+  "@next": {
+    "description": "نص زر التالي"
+  },
+  "skip": "تخطي",
+  "@skip": {
+    "description": "نص زر التخطي"
+  },
+  "getStarted": "ابدأ الآن",
+  "@getStarted": {
+    "description": "نص زر البدء"
+  },
+  "education": "التعليم",
+  "@education": {
+    "description": "عنوان فرعي لكاروسيل التعليم"
+  },
+  "community": "المجتمع",
+  "@community": {
+    "description": "عنوان فرعي لكاروسيل المجتمع"
+  },
+  "onboardingHealthDescription": "تحكم في صحتك. سجّل الألم، راقب النوم، تتبع نقل الدم، وحافظ على الترطيب.\n\nاحصل على تذكيرات الأدوية ورؤى صحية لفهم جسمك واتخاذ قرارات مدروسة.",
+  "@onboardingHealthDescription": {
+    "description": "وصف كاروسيل تتبع الصحة"
+  },
+  "onboardingEducationDescription": "اطلع على مكتبة من المعلومات الطبية الموثقة مع مقالات وفيديوهات جذابة مصممة لتعليمك وتمكينك.",
+  "@onboardingEducationDescription": {
+    "description": "وصف كاروسيل التعليم"
+  },
+  "onboardingCommunityDescription": "انضم إلى مجتمع نشط في منتدى سِكيلا! تواصل، شارك التجارب، وادعم الآخرين في مساحة مصممة للنقاشات المفيدة والمعرفة المشتركة.",
+  "@onboardingCommunityDescription": {
+    "description": "وصف كاروسيل المجتمع"
+  },
+  "logout": "تسجيل الخروج",
+  "@logout": {
+    "description": "نص زر تسجيل الخروج"
+  },
   "error": "خطأ",
   "@error": {
     "description": "عنوان رسالة الخطأ"
@@ -244,5 +324,105 @@
   "changePositive15": "+15%",
   "@changePositive15": {
     "description": "عينة تغيير إيجابي 15%"
-  }
+  },
+  "splashWelcome": "مرحباً بك في سيكيلا",
+  "@splashWelcome": {
+    "description": "رسالة ترحيب شاشة البداية"
+  },
+  "splashTagline": "رفيقك الرقمي للحياة العصرية",
+  "@splashTagline": {
+    "description": "شعار شاشة البداية"
+  },
+  "splashLoading": "جارٍ تحميل تجربتك...",
+  "@splashLoading": {
+    "description": "رسالة تحميل شاشة البداية"
+  },
+  "poweredBy": "مدعوم بـ Flutter",
+  "@poweredBy": {
+    "description": "نص الإسناد"
+  },
+  "goodMorning": "صباح الخير",
+  "@goodMorning": {
+    "description": "تحية الصباح"
+  },
+  "goodAfternoon": "مساء الخير",
+  "@goodAfternoon": {
+    "description": "تحية بعد الظهر"
+  },
+  "goodEvening": "مساء الخير",
+  "@goodEvening": {
+    "description": "تحية المساء"
+  },
+  "userName": "صہیب",
+  "@userName": {
+    "description": "اسم المستخدم الافتراضي"
+  },
+  "waterLog": "سجل المياه",
+  "@waterLog": {
+    "description": "عنوان قسم سجل المياه"
+  },
+  "todaysGoal": "هدف اليوم",
+  "@todaysGoal": {
+    "description": "تسمية الهدف اليومي"
+  },
+  "remaining": "المتبقي",
+  "@remaining": {
+    "description": "تسمية الكمية المتبقية"
+  },
+  "atYourGoal": "من هدفك",
+  "@atYourGoal": {
+    "description": "نص تحقيق الهدف"
+  },
+  "logWater": "تسجيل المياه",
+  "@logWater": {
+    "description": "نص زر تسجيل المياه"
+  },
+  "logPain": "تسجيل الألم",
+  "@logPain": {
+    "description": "عنوان بطاقة تسجيل الألم"
+  },
+  "logBlood": "تسجيل الدم",
+  "@logBlood": {
+    "description": "عنوان بطاقة تسجيل الدم"
+  },
+  "logMedication": "تسجيل الدواء",
+  "@logMedication": {
+    "description": "عنوان بطاقة تسجيل الدواء"
+  },
+  "logSleep": "تسجيل النوم",
+  "@logSleep": {
+    "description": "عنوان بطاقة تسجيل النوم"
+  },
+  "ml": "مل",
+  "@ml": {
+    "description": "وحدة الملليلتر"
+  },
+  "waterGoal": "2200",
+  "@waterGoal": {
+    "description": "هدف المياه الافتراضي بالمل"
+  },
+  "waterRemaining": "100",
+  "@waterRemaining": {
+    "description": "كمية المياه المتبقية"
+  },
+  "log": "السجل",
+  "@log": {
+    "description": "تبويب السجل"
+  },
+  "explore": "استكشف",
+  "@explore": {
+    "description": "تبويب الاستكشاف"
+  },
+  "profile": "الملف الشخصي",
+  "@profile": {
+    "description": "تبويب الملف الشخصي"
+  },
+  "explorePostsTitle": "أحدث المنشورات",
+  "loadingPosts": "جاري تحميل المنشورات...",
+  "errorLoadingPosts": "خطأ في تحميل المنشورات",
+  "retryLoadingPosts": "إعادة المحاولة",
+  "noPostsFound": "لم يتم العثور على منشورات",
+  "refreshPosts": "اسحب لأسفل للتحديث",
+  "postAuthor": "بواسطة المستخدم {userId}",
+  "readMore": "اقرأ المزيد"
 }

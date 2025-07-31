@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import '../../app/l10n/generated/app_localizations.dart';
 import '../../core/constants/spacing.dart';
-// import '../../core/constants/app_icons.dart'; // TODO: Use when custom SVG assets are available
-// import '../../core/constants/app_images.dart'; // TODO: Use when custom image assets are available
+import 'dart:math' as math;
 
-/// Dashboard screen displaying main app content and overview
-/// Contains user statistics, quick actions, and navigation shortcuts
-class DashboardScreen extends StatelessWidget {
+/// Health tracking dashboard screen
+/// Shows personalized greeting, water logging, and health tracking cards
+class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
+
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen> {
+  double waterConsumed = 210.0; // Current water intake in ml
+  double waterGoal = 2200.0; // Daily water goal in ml
 
   @override
   Widget build(BuildContext context) {
@@ -15,396 +22,303 @@ class DashboardScreen extends StatelessWidget {
     final theme = Theme.of(context);
     
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          l10n.dashboard,
-          style: theme.textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w600,
-            color: theme.colorScheme.onSurface,
-          ),
-        ),
-        backgroundColor: theme.colorScheme.surface,
-        elevation: 0,
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.notifications_outlined,
-              color: theme.colorScheme.onSurface,
-            ),
-            onPressed: () {
-              // Handle notifications
-            },
-          ),
-          const SizedBox(width: AppSpacing.spaceS),
-        ],
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsetsDirectional.all(AppSpacing.spaceL),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Welcome section with illustration
-            _buildWelcomeSection(context, l10n, theme),
-            
-            const SizedBox(height: AppSpacing.spaceXL),
-            
-            // Statistics section
-            _buildStatsSection(context, l10n, theme),
-            
-            const SizedBox(height: AppSpacing.spaceXL),
-          ],
-        ),
-      ),
-    );
-  }
-
-  /// Welcome section with user greeting and illustration
-  Widget _buildWelcomeSection(BuildContext context, AppLocalizations l10n, ThemeData theme) {
-    return Card(
-      elevation: 2,
-      clipBehavior: Clip.antiAlias,
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: AlignmentDirectional.topStart,
-            end: AlignmentDirectional.bottomEnd,
-            colors: [
-              theme.colorScheme.primaryContainer.withOpacity(0.1),
-              theme.colorScheme.secondaryContainer.withOpacity(0.05),
-            ],
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsetsDirectional.all(AppSpacing.spaceXL),
-          child: Row(
-            children: [
-              Expanded(
-                flex: 2,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      l10n.welcome,
-                      style: theme.textTheme.headlineMedium?.copyWith(
-                        color: theme.colorScheme.primary,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.spaceS),
-                    Text(
-                      l10n.welcomeToDashboard,
-                      style: theme.textTheme.bodyLarge?.copyWith(
-                        color: theme.colorScheme.onSurface,
-                        height: 1.5,
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.spaceL),
-                    SizedBox(
-                      width: double.infinity,
-                      child: FilledButton.icon(
-                        onPressed: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Row(
-                                children: [
-                                  Icon(
-                                    Icons.check_circle,
-                                    color: theme.colorScheme.onPrimary,
-                                  ),
-                                  const SizedBox(width: AppSpacing.spaceS),
-                                  Text(l10n.success),
-                                ],
-                              ),
-                              backgroundColor: theme.colorScheme.primary,
-                              behavior: SnackBarBehavior.floating,
-                            ),
-                          );
-                        },
-                        icon: const Icon(Icons.rocket_launch),
-                        label: Text(l10n.testAction),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(width: AppSpacing.spaceL),
-              Expanded(
-                child: Container(
-                  height: 120,
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.primary.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(AppSpacing.spaceS),
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.dashboard_customize,
-                      size: 60,
-                      color: theme.colorScheme.primary,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  /// Statistics section with metric cards
-  Widget _buildStatsSection(BuildContext context, AppLocalizations l10n, ThemeData theme) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          l10n.statisticsOverview,
-          style: theme.textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w600,
-            color: theme.colorScheme.onSurface,
-          ),
-        ),
-        const SizedBox(height: AppSpacing.spaceL),
-        GridView.count(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          crossAxisCount: 2,
-          mainAxisSpacing: AppSpacing.spaceL,
-          crossAxisSpacing: AppSpacing.spaceL,
-          childAspectRatio: 1.2,
-          children: [
-            _buildStatCard(
-              context: context,
-              theme: theme,
-              icon: Icons.people_outline,
-              title: l10n.totalUsers,
-              value: l10n.usersCount,
-              change: l10n.changePositive12,
-              isPositive: true,
-            ),
-            _buildStatCard(
-              context: context,
-              theme: theme,
-              icon: Icons.trending_up,
-              title: l10n.revenue,
-              value: l10n.revenueAmount,
-              change: l10n.changePositive8,
-              isPositive: true,
-            ),
-            _buildStatCard(
-              context: context,
-              theme: theme,
-              icon: Icons.task_alt,
-              title: l10n.tasks,
-              value: l10n.tasksCount,
-              change: l10n.changeNegative3,
-              isPositive: false,
-            ),
-            _buildStatCard(
-              context: context,
-              theme: theme,
-              icon: Icons.bar_chart,
-              title: l10n.growth,
-              value: l10n.growthPercentage,
-              change: l10n.changePositive15,
-              isPositive: true,
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  /// Individual stat card widget
-  Widget _buildStatCard({
-    required BuildContext context,
-    required ThemeData theme,
-    required IconData icon,
-    required String title,
-    required String value,
-    required String change,
-    required bool isPositive,
-  }) {
-    return Card(
-      elevation: 1,
-      child: Padding(
-        padding: const EdgeInsetsDirectional.all(AppSpacing.spaceL),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  padding: const EdgeInsetsDirectional.all(AppSpacing.spaceS),
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.primaryContainer.withOpacity(0.3),
-                    borderRadius: BorderRadius.circular(AppSpacing.spaceS),
-                  ),
-                  child: Icon(
-                    icon,
-                    size: 24,
-                    color: theme.colorScheme.primary,
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsetsDirectional.symmetric(
-                    horizontal: AppSpacing.spaceS,
-                    vertical: AppSpacing.spaceXS,
-                  ),
-                  decoration: BoxDecoration(
-                    color: isPositive 
-                        ? theme.colorScheme.primaryContainer.withOpacity(0.2)
-                        : theme.colorScheme.errorContainer.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(AppSpacing.spaceM),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        isPositive ? Icons.arrow_upward : Icons.arrow_downward,
-                        size: 12,
-                        color: isPositive 
-                            ? theme.colorScheme.primary
-                            : theme.colorScheme.error,
-                      ),
-                      const SizedBox(width: AppSpacing.spaceXXS),
-                      Text(
-                        change,
-                        style: theme.textTheme.labelSmall?.copyWith(
-                          color: isPositive 
-                              ? theme.colorScheme.primary
-                              : theme.colorScheme.error,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: AppSpacing.spaceS),
-            Text(
-              value,
-              style: theme.textTheme.headlineSmall?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: theme.colorScheme.onSurface,
-              ),
-            ),
-            Text(
-              title,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  /// Quick actions section with action buttons
-  Widget _buildQuickActionsSection(BuildContext context, AppLocalizations l10n, ThemeData theme) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          l10n.quickActions,
-          style: theme.textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w600,
-            color: theme.colorScheme.onSurface,
-          ),
-        ),
-        const SizedBox(height: AppSpacing.spaceL),
-        GridView.count(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          crossAxisCount: 2,
-          mainAxisSpacing: AppSpacing.spaceL,
-          crossAxisSpacing: AppSpacing.spaceL,
-          childAspectRatio: 1.5,
-          children: [
-            _buildQuickActionCard(
-              context: context,
-              theme: theme,
-              icon: Icons.post_add,
-              title: l10n.createPost,
-              subtitle: l10n.addNewContent,
-              onTap: () => _handleQuickAction(context, l10n.createPost),
-            ),
-            _buildQuickActionCard(
-              context: context,
-              theme: theme,
-              icon: Icons.group_add,
-              title: l10n.manageUsers,
-              subtitle: l10n.userAdministration,
-              onTap: () => _handleQuickAction(context, l10n.manageUsers),
-            ),
-            _buildQuickActionCard(
-              context: context,
-              theme: theme,
-              icon: Icons.analytics,
-              title: l10n.viewReports,
-              subtitle: l10n.analyticsInsights,
-              onTap: () => _handleQuickAction(context, l10n.viewReports),
-            ),
-            _buildQuickActionCard(
-              context: context,
-              theme: theme,
-              icon: Icons.settings,
-              title: l10n.settings,
-              subtitle: l10n.appConfiguration,
-              onTap: () => _handleQuickAction(context, l10n.settings),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  /// Individual quick action card widget
-  Widget _buildQuickActionCard({
-    required BuildContext context,
-    required ThemeData theme,
-    required IconData icon,
-    required String title,
-    required String subtitle,
-    required VoidCallback onTap,
-  }) {
-    return Card(
-      elevation: 1,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(12),
-        child: Padding(
+      backgroundColor: theme.colorScheme.surfaceContainerLowest,
+      body: SafeArea(
+        child: SingleChildScrollView(
           padding: const EdgeInsetsDirectional.all(AppSpacing.spaceL),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Header with greeting and notification
+              _buildHeader(context, l10n, theme),
+              
+              const SizedBox(height: AppSpacing.spaceXL),
+              
+              // Water log section
+              _buildWaterLogSection(context, l10n, theme),
+              
+              const SizedBox(height: AppSpacing.spaceXL),
+              
+              // Health tracking cards
+              _buildHealthTrackingCards(context, l10n, theme),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Header with time-based greeting and notification icon
+  Widget _buildHeader(BuildContext context, AppLocalizations l10n, ThemeData theme) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          '${_getTimeBasedGreeting(l10n)}, ${l10n.userName}!',
+          style: theme.textTheme.headlineSmall?.copyWith(
+            fontWeight: FontWeight.bold,
+            color: theme.colorScheme.onSurface,
+          ),
+        ),
+        Container(
+          padding: const EdgeInsetsDirectional.all(AppSpacing.spaceS),
+          decoration: BoxDecoration(
+            color: theme.colorScheme.surface,
+            borderRadius: BorderRadius.circular(AppSpacing.spaceM),
+            boxShadow: [
+              BoxShadow(
+                color: theme.shadowColor.withValues(alpha: 0.1),
+                blurRadius: 8,
+                offset: const Offset(0, 2),
+              ),
+            ],
+          ),
+          child: Icon(
+            Icons.notifications_outlined,
+            color: theme.colorScheme.primary  ,
+            size: 24,
+          ),
+        ),
+      ],
+    );
+  }
+
+  /// Water log section with circular progress and button
+  Widget _buildWaterLogSection(BuildContext context, AppLocalizations l10n, ThemeData theme) {
+    final double percentage = (waterConsumed / waterGoal).clamp(0.0, 1.0);
+    final double remaining = math.max(0, waterGoal - waterConsumed);
+    
+    return Container(
+      padding: const EdgeInsetsDirectional.all(AppSpacing.spaceXL),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surfaceContainerHighest,
+        borderRadius: BorderRadius.circular(AppSpacing.spaceL),
+      ),
+      child: Column(
+        children: [
+          // Section title
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: Text(
+              l10n.waterLog,
+              style: theme.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w600,
+                color: theme.colorScheme.onSurface,
+              ),
+            ),
+          ),
+          
+          const SizedBox(height: AppSpacing.spaceXL),
+          
+          // Circular progress indicator
+          SizedBox(
+            width: 150,
+            height: 150,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                // Background circle
+                SizedBox(
+                  width: 150,
+                  height: 150,
+                  child: CircularProgressIndicator(
+                    value: 1.0,
+                    strokeWidth: 12,
+                    backgroundColor: theme.colorScheme.surface,
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      theme.colorScheme.surface,
+                    ),
+                  ),
+                ),
+                // Progress circle
+                SizedBox(
+                  width: 150,
+                  height: 150,
+                  child: CircularProgressIndicator(
+                    value: percentage,
+                    strokeWidth: 12,
+                    backgroundColor: Colors.transparent,
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      theme.colorScheme.primary,
+                    ),
+                  ),
+                ),
+                // Center content
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      l10n.todaysGoal,
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.spaceXXS),
+                    Text(
+                      '${waterGoal.toInt()}${l10n.ml}',
+                      style: theme.textTheme.headlineSmall?.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: theme.colorScheme.onSurface,
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.spaceXXS),
+                    Text(
+                      '${l10n.remaining}: ${remaining.toInt()}${l10n.ml}',
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                    Text(
+                      l10n.atYourGoal,
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          
+          const SizedBox(height: AppSpacing.spaceXL),
+          
+          // Log Water button
+          SizedBox(
+            width: double.infinity,
+            child: FilledButton(
+              onPressed: () => _handleLogWater(context, l10n),
+              style: FilledButton.styleFrom(
+                backgroundColor: theme.colorScheme.primary,
+                padding: const EdgeInsetsDirectional.symmetric(
+                  vertical: AppSpacing.spaceL,
+                ),
+              ),
+              child: Text(
+                l10n.logWater,
+                style: theme.textTheme.titleMedium?.copyWith(
+                  color: theme.colorScheme.onPrimary,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Health tracking cards grid
+  Widget _buildHealthTrackingCards(BuildContext context, AppLocalizations l10n, ThemeData theme) {
+    return GridView.count(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: 2,
+      mainAxisSpacing: AppSpacing.spaceL,
+      crossAxisSpacing: AppSpacing.spaceL,
+      childAspectRatio: 1.0,
+      children: [
+        _buildHealthCard(
+          context: context,
+          theme: theme,
+          icon: Icons.flash_on,
+          title: l10n.logPain,
+          onTap: () => _handleHealthAction(context, l10n.logPain),
+        ),
+        _buildHealthCard(
+          context: context,
+          theme: theme,
+          icon: Icons.water_drop,
+          title: l10n.logBlood,
+          onTap: () => _handleHealthAction(context, l10n.logBlood),
+        ),
+        _buildHealthCard(
+          context: context,
+          theme: theme,
+          icon: Icons.medication,
+          title: l10n.logMedication,
+          onTap: () => _handleHealthAction(context, l10n.logMedication),
+        ),
+        _buildHealthCard(
+          context: context,
+          theme: theme,
+          icon: Icons.bedtime,
+          title: l10n.logSleep,
+          onTap: () => _handleHealthAction(context, l10n.logSleep),
+        ),
+      ],
+    );
+  }
+
+  /// Individual health tracking card
+  Widget _buildHealthCard({
+    required BuildContext context,
+    required ThemeData theme,
+    required IconData icon,
+    required String title,
+    required VoidCallback onTap,
+  }) {
+    return Container(
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surface,
+        borderRadius: BorderRadius.circular(AppSpacing.spaceL),
+        border: Border.all(
+          color: theme.colorScheme.outline.withValues(alpha: 0.2),
+          width: 1,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: theme.shadowColor.withValues(alpha: 0.05),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(AppSpacing.spaceL),
+        child: Padding(
+          padding: const EdgeInsetsDirectional.all(AppSpacing.spaceL),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Plus icon in circle
               Container(
-                padding: const EdgeInsetsDirectional.all(AppSpacing.spaceS),
+                width: 48,
+                height: 48,
                 decoration: BoxDecoration(
-                  color: theme.colorScheme.secondaryContainer.withOpacity(0.3),
-                  borderRadius: BorderRadius.circular(AppSpacing.spaceS),
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: theme.colorScheme.outline.withValues(alpha: 0.5),
+                    width: 2,
+                  ),
                 ),
                 child: Icon(
-                  icon,
-                  size: 24,
-                  color: theme.colorScheme.secondary,
-                ),
-              ),
-              const SizedBox(height: AppSpacing.spaceS),
-              Text(
-                title,
-                style: theme.textTheme.titleSmall?.copyWith(
-                  fontWeight: FontWeight.w600,
+                  Icons.add,
                   color: theme.colorScheme.onSurface,
+                  size: 24,
                 ),
               ),
-              Text(
-                subtitle,
-                style: theme.textTheme.bodySmall?.copyWith(
-                  color: theme.colorScheme.onSurfaceVariant,
-                ),
+              
+              const SizedBox(height: AppSpacing.spaceM),
+              
+              // Title and icon
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    title,
+                    style: theme.textTheme.titleSmall?.copyWith(
+                      fontWeight: FontWeight.w500,
+                      color: theme.colorScheme.onSurface,
+                    ),
+                  ),
+                  const SizedBox(width: AppSpacing.spaceS),
+                  Icon(
+                    icon,
+                    size: 16,
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ],
               ),
             ],
           ),
@@ -413,11 +327,40 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-  void _handleQuickAction(BuildContext context, String action) {
-    final l10n = AppLocalizations.of(context)!;
+  /// Get time-based greeting
+  String _getTimeBasedGreeting(AppLocalizations l10n) {
+    final hour = DateTime.now().hour;
+    
+    if (hour >= 5 && hour < 12) {
+      return l10n.goodMorning;
+    } else if (hour >= 12 && hour < 17) {
+      return l10n.goodAfternoon;
+    } else {
+      return l10n.goodEvening;
+    }
+  }
+
+  /// Handle log water action
+  void _handleLogWater(BuildContext context, AppLocalizations l10n) {
+    setState(() {
+      // Add 250ml to water intake (example)
+      waterConsumed = math.min(waterConsumed + 250, waterGoal);
+    });
+    
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(l10n.actionTapped(action)),
+        content: Text('${l10n.logWater} - 250${l10n.ml} ${l10n.success.toLowerCase()}'),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+  }
+
+  /// Handle health tracking actions
+  void _handleHealthAction(BuildContext context, String action) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('$action ${AppLocalizations.of(context)!.success.toLowerCase()}'),
         behavior: SnackBarBehavior.floating,
       ),
     );

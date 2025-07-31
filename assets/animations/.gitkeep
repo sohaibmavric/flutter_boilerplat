@@ -2,3 +2,7 @@
 # Animations directory for Lottie/Rive animations following naming convention:
 # - descriptive_name_animation.json/.riv
 # - loading_animation.json, success_animation.riv, etc.
+#
+# For splash screen:
+# - splash_loading.json (Lottie loading animation)
+# - logo_reveal.json (Logo animation for splash)

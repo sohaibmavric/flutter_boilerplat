@@ -48,6 +48,86 @@
   "@ok": {
     "description": "OK button text"
   },
+  "welcomeToSikila": "Welcome to\nSIKILA",
+  "@welcomeToSikila": {
+    "description": "Welcome title on onboarding"
+  },
+  "healthTracking": "Health tracking",
+  "@healthTracking": {
+    "description": "Health tracking subtitle"
+  },
+  "onboardingWelcomeDescription": "Take control of your health. Log pain, monitor sleep, track blood transfusions, and stay hydrated.\n\nGet medication reminders and health insights to understand your body and make informed choices.",
+  "@onboardingWelcomeDescription": {
+    "description": "Welcome screen description"
+  },
+  "signUpForFree": "Sign Up For Free",
+  "@signUpForFree": {
+    "description": "Sign up button text"
+  },
+  "logIn": "Log In",
+  "@logIn": {
+    "description": "Log in button text"
+  },
+  "trackYourHealth": "Track Your Health",
+  "@trackYourHealth": {
+    "description": "Second onboarding screen title"
+  },
+  "comprehensiveMonitoring": "Comprehensive monitoring",
+  "@comprehensiveMonitoring": {
+    "description": "Second onboarding screen subtitle"
+  },
+  "onboardingTrackDescription": "Monitor your daily activities, symptoms, and health metrics in one place. Set reminders and track your progress over time.",
+  "@onboardingTrackDescription": {
+    "description": "Second onboarding screen description"
+  },
+  "stayMotivated": "Stay Motivated",
+  "@stayMotivated": {
+    "description": "Third onboarding screen title"
+  },
+  "personalizedInsights": "Personalized insights",
+  "@personalizedInsights": {
+    "description": "Third onboarding screen subtitle"
+  },
+  "onboardingMotivatedDescription": "Get personalized recommendations and insights based on your health data. Achieve your wellness goals with smart tracking.",
+  "@onboardingMotivatedDescription": {
+    "description": "Third onboarding screen description"
+  },
+  "next": "Next",
+  "@next": {
+    "description": "Next button text"
+  },
+  "skip": "Skip",
+  "@skip": {
+    "description": "Skip button text"
+  },
+  "getStarted": "Get Started",
+  "@getStarted": {
+    "description": "Get started button text"
+  },
+  "education": "Education",
+  "@education": {
+    "description": "Education carousel subtitle"
+  },
+  "community": "Community",
+  "@community": {
+    "description": "Community carousel subtitle"
+  },
+  "onboardingHealthDescription": "Take control of your health. Log pain, monitor sleep, track blood transfusions, and stay hydrated.\n\nGet medication reminders and health insights to understand your body and make informed choices.",
+  "@onboardingHealthDescription": {
+    "description": "Health tracking carousel description"
+  },
+  "onboardingEducationDescription": "Access a library of trusted medical information with engaging articles and videos designed to educate and empower you.",
+  "@onboardingEducationDescription": {
+    "description": "Education carousel description"
+  },
+  "onboardingCommunityDescription": "Join a thriving community on the Sikila forum! Connect, share experiences, and support others in a space designed for meaningful discussions and shared knowledge.",
+  "@onboardingCommunityDescription": {
+    "description": "Community carousel description"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout button text"
+  },
   "error": "Error",
   "@error": {
     "description": "Error message title"
@@ -244,5 +324,134 @@
   "changePositive15": "+15%",
   "@changePositive15": {
     "description": "Sample positive change 15%"
+  },
+  "splashWelcome": "Welcome to Sikila",
+  "@splashWelcome": {
+    "description": "Splash screen welcome message"
+  },
+  "splashTagline": "Your digital companion for modern living",
+  "@splashTagline": {
+    "description": "Splash screen tagline"
+  },
+  "splashLoading": "Loading your experience...",
+  "@splashLoading": {
+    "description": "Splash screen loading message"
+  },
+  "poweredBy": "Powered by Flutter",
+  "@poweredBy": {
+    "description": "Powered by attribution text"
+  },
+  "goodMorning": "Good Morning",
+  "@goodMorning": {
+    "description": "Morning greeting"
+  },
+  "goodAfternoon": "Good Afternoon", 
+  "@goodAfternoon": {
+    "description": "Afternoon greeting"
+  },
+  "goodEvening": "Good Evening",
+  "@goodEvening": {
+    "description": "Evening greeting"
+  },
+  "userName": "Sohaib",
+  "@userName": {
+    "description": "Default user name"
+  },
+  "waterLog": "Water Log",
+  "@waterLog": {
+    "description": "Water log section title"
+  },
+  "todaysGoal": "Today's Goal",
+  "@todaysGoal": {
+    "description": "Daily goal label"
+  },
+  "remaining": "Remaining",
+  "@remaining": {
+    "description": "Remaining amount label"
+  },
+  "atYourGoal": "at your goal",
+  "@atYourGoal": {
+    "description": "Goal achievement text"
+  },
+  "logWater": "Log Water",
+  "@logWater": {
+    "description": "Log water button text"
+  },
+  "logPain": "Log Pain",
+  "@logPain": {
+    "description": "Log pain card title"
+  },
+  "logBlood": "Log Blood",
+  "@logBlood": {
+    "description": "Log blood card title"
+  },
+  "logMedication": "Log Medication",
+  "@logMedication": {
+    "description": "Log medication card title"
+  },
+  "logSleep": "Log Sleep",
+  "@logSleep": {
+    "description": "Log sleep card title"
+  },
+  "ml": "ml",
+  "@ml": {
+    "description": "Milliliters unit"
+  },
+  "waterGoal": "2200",
+  "@waterGoal": {
+    "description": "Default water goal in ml"
+  },
+  "waterRemaining": "100",
+  "@waterRemaining": {
+    "description": "Remaining water amount"
+  },
+  "log": "Log",
+  "@log": {
+    "description": "Log navigation tab"
+  },
+  "explore": "Explore",
+  "@explore": {
+    "description": "Explore navigation tab"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile navigation tab"
+  },
+  "explorePostsTitle": "Latest Posts",
+  "@explorePostsTitle": {
+    "description": "Title for posts section in explore screen"
+  },
+  "loadingPosts": "Loading posts...",
+  "@loadingPosts": {
+    "description": "Loading message when fetching posts"
+  },
+  "errorLoadingPosts": "Error loading posts",
+  "@errorLoadingPosts": {
+    "description": "Error message when posts fail to load"
+  },
+  "retryLoadingPosts": "Retry",
+  "@retryLoadingPosts": {
+    "description": "Button text to retry loading posts"
+  },
+  "noPostsFound": "No posts found",
+  "@noPostsFound": {
+    "description": "Message when no posts are available"
+  },
+  "refreshPosts": "Pull down to refresh",
+  "@refreshPosts": {
+    "description": "Instruction to refresh posts list"
+  },
+  "postAuthor": "By User {userId}",
+  "@postAuthor": {
+    "description": "Post author display with user ID",
+    "placeholders": {
+      "userId": {
+        "type": "int"
+      }
+    }
+  },
+  "readMore": "Read more",
+  "@readMore": {
+    "description": "Read more button text for post cards"
   }
 }

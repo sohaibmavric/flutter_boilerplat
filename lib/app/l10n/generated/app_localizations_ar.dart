@@ -45,6 +45,72 @@ class AppLocalizationsAr extends AppLocalizations {
   String get ok => 'موافق';
 
   @override
+  String get welcomeToSikila => 'مرحباً بك في\nسِكيلا';
+
+  @override
+  String get healthTracking => 'تتبع الصحة';
+
+  @override
+  String get onboardingWelcomeDescription =>
+      'تحكم في صحتك. سجّل الألم، راقب النوم، تتبع نقل الدم، وحافظ على الترطيب.\n\nاحصل على تذكيرات الأدوية ورؤى صحية لفهم جسمك واتخاذ قرارات مدروسة.';
+
+  @override
+  String get signUpForFree => 'اشترك مجاناً';
+
+  @override
+  String get logIn => 'تسجيل الدخول';
+
+  @override
+  String get trackYourHealth => 'تتبع صحتك';
+
+  @override
+  String get comprehensiveMonitoring => 'مراقبة شاملة';
+
+  @override
+  String get onboardingTrackDescription =>
+      'راقب أنشطتك اليومية والأعراض والمؤشرات الصحية في مكان واحد. اضبط التذكيرات وتتبع تقدمك مع الوقت.';
+
+  @override
+  String get stayMotivated => 'ابق متحمساً';
+
+  @override
+  String get personalizedInsights => 'رؤى شخصية';
+
+  @override
+  String get onboardingMotivatedDescription =>
+      'احصل على توصيات ورؤى شخصية بناءً على بياناتك الصحية. حقق أهدافك الصحية بتتبع ذكي.';
+
+  @override
+  String get next => 'التالي';
+
+  @override
+  String get skip => 'تخطي';
+
+  @override
+  String get getStarted => 'ابدأ الآن';
+
+  @override
+  String get education => 'التعليم';
+
+  @override
+  String get community => 'المجتمع';
+
+  @override
+  String get onboardingHealthDescription =>
+      'تحكم في صحتك. سجّل الألم، راقب النوم، تتبع نقل الدم، وحافظ على الترطيب.\n\nاحصل على تذكيرات الأدوية ورؤى صحية لفهم جسمك واتخاذ قرارات مدروسة.';
+
+  @override
+  String get onboardingEducationDescription =>
+      'اطلع على مكتبة من المعلومات الطبية الموثقة مع مقالات وفيديوهات جذابة مصممة لتعليمك وتمكينك.';
+
+  @override
+  String get onboardingCommunityDescription =>
+      'انضم إلى مجتمع نشط في منتدى سِكيلا! تواصل، شارك التجارب، وادعم الآخرين في مساحة مصممة للنقاشات المفيدة والمعرفة المشتركة.';
+
+  @override
+  String get logout => 'تسجيل الخروج';
+
+  @override
   String get error => 'خطأ';
 
   @override
@@ -190,4 +256,99 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get changePositive15 => '+15%';
+
+  @override
+  String get splashWelcome => 'مرحباً بك في سيكيلا';
+
+  @override
+  String get splashTagline => 'رفيقك الرقمي للحياة العصرية';
+
+  @override
+  String get splashLoading => 'جارٍ تحميل تجربتك...';
+
+  @override
+  String get poweredBy => 'مدعوم بـ Flutter';
+
+  @override
+  String get goodMorning => 'صباح الخير';
+
+  @override
+  String get goodAfternoon => 'مساء الخير';
+
+  @override
+  String get goodEvening => 'مساء الخير';
+
+  @override
+  String get userName => 'صہیب';
+
+  @override
+  String get waterLog => 'سجل المياه';
+
+  @override
+  String get todaysGoal => 'هدف اليوم';
+
+  @override
+  String get remaining => 'المتبقي';
+
+  @override
+  String get atYourGoal => 'من هدفك';
+
+  @override
+  String get logWater => 'تسجيل المياه';
+
+  @override
+  String get logPain => 'تسجيل الألم';
+
+  @override
+  String get logBlood => 'تسجيل الدم';
+
+  @override
+  String get logMedication => 'تسجيل الدواء';
+
+  @override
+  String get logSleep => 'تسجيل النوم';
+
+  @override
+  String get ml => 'مل';
+
+  @override
+  String get waterGoal => '2200';
+
+  @override
+  String get waterRemaining => '100';
+
+  @override
+  String get log => 'السجل';
+
+  @override
+  String get explore => 'استكشف';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
+  String get explorePostsTitle => 'أحدث المنشورات';
+
+  @override
+  String get loadingPosts => 'جاري تحميل المنشورات...';
+
+  @override
+  String get errorLoadingPosts => 'خطأ في تحميل المنشورات';
+
+  @override
+  String get retryLoadingPosts => 'إعادة المحاولة';
+
+  @override
+  String get noPostsFound => 'لم يتم العثور على منشورات';
+
+  @override
+  String get refreshPosts => 'اسحب لأسفل للتحديث';
+
+  @override
+  String postAuthor(int userId) {
+    return 'بواسطة المستخدم $userId';
+  }
+
+  @override
+  String get readMore => 'اقرأ المزيد';
 }

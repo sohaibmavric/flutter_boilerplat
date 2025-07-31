@@ -1,0 +1,8 @@
+# This file ensures the directory is tracked by git
+# Logos directory for brand logos following naming convention:
+# - app_logo.svg, app_logo_small.png, splash_logo.png
+# - Multiple sizes and formats as needed
+# 
+# For splash screen:
+# - splash_logo.png (120x120px for main logo)
+# - app_icon.png (app icon for various uses)

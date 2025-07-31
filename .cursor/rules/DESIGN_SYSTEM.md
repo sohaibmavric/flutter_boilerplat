@@ -1,72 +1,23 @@
 # Sikila Flutter Design System
 
-This document outlines the design system, coding conventions, and architectural guidelines for the Sikila Flutter application. These rules should be strictly followed to ensure consistency, maintainability, and quality throughout the project.
+This document defines the **VISUAL DESIGN SYSTEM** for the Sikila Flutter application. These rules ensure UI/UX consistency, proper theming, and visual harmony across the entire application.
 
-## 1. Guiding Principles
+## 🎨 Design System Principles
 
-- **Clarity and Readability**: Code should be self-documenting. Prioritize clear names for variables, functions, and classes.
-- **Consistency**: Adhere to the rules in this document for a uniform codebase.
-- **Performance**: Write efficient code. Use `const` widgets, lazy loading, and optimized state management.
-- **Scalability**: Structure the project to easily accommodate new features and developers.
-- **🚨 ZERO TOLERANCE**: NO hardcoded strings, colors, spacing, or non-theme elements allowed
-- **🌐 Multilingual First**: Every UI string MUST come from localization files
+- **🚨 ZERO TOLERANCE**: NO hardcoded colors, spacing, typography, or strings
+- **🌐 Multilingual First**: Every UI string MUST come from localization files  
+- **🎯 Visual Consistency**: All visual elements follow defined design tokens
+- **♿ Accessibility**: Proper contrast ratios, touch targets, and semantic labels
+- **📱 Responsive Design**: Adaptable layouts for different screen sizes
+- **🌓 Theme Support**: Seamless light and dark mode implementation
 
-## 2. Project Structure
+---
 
-We will adopt a screen-first project structure inside the `lib/` directory.
+## 1. Color Palette
 
-```
-lib/
-|-- app/
-|   |-- app.dart             # Main application widget
-|   |-- router/              # Navigation and routing
-|   |-- theme/               # Theme definitions
-|   |-- l10n/                # Localization files
-|
-|-- core/
-|   |-- constants/           # App-wide constants
-|   |-- services/            # Core services (API, etc.)
-|   |-- utils/               # Utility functions
-|   |-- widgets/             # Shared, reusable widgets
-|
-|-- screens/
-|   |-- screen_name/
-|   |   |-- data/
-|   |   |   |-- models/
-|   |   |   |-- repositories/
-|   |   |   |-- providers/
-|   |   |
-|   |   |-- presentation/
-|   |   |   |-- pages/
-|   |   |   |-- widgets/
-|   |   |   |-- state/         # BLoC, Cubit, or other state managers
-|
-|-- main.dart                # App entry point
+### 🚨 MANDATORY COLOR SYSTEM 🚨
 
-assets/
-|-- fonts/                   # Custom fonts
-|-- images/                  # App images and graphics
-|   |-- icons/               # Custom app icons
-|   |-- illustrations/       # Illustrations and graphics
-|   |-- logos/               # Brand logos
-|   |-- backgrounds/         # Background images
-|-- animations/              # Lottie/Rive animations
-|-- data/                    # JSON/CSV data files
-```
-
-## 3. Coding Style & Conventions
-
-- **Language**: Dart
-- **Formatting**: Adhere to the rules defined in `analysis_options.yaml`. Run `dart format .` regularly.
-- **Naming**:
-    - `PascalCase` for classes, enums, and typedefs.
-    - `camelCase` for variables, parameters, and method names.
-    - `snake_case` for file and directory names.
-- **Linting**: Use `flutter_lints` and enable additional rules in `analysis_options.yaml` for stricter static analysis.
-
-## 4. Color Palette
-
-All colors used in the app must be referenced from the central theme. Do not hardcode color values.
+**Use ONLY theme colors. NO hardcoded color values allowed anywhere in the application.**
 
 ### Base Colors
 | Name        | Hex       |
@@ -138,7 +89,9 @@ All colors used in the app must be referenced from the central theme. Do not har
 | Success 900 | `#074D31` |
 | Success 950 | `#053321` |
 
-## 5. Theming (Light & Dark)
+---
+
+## 2. Theming (Light & Dark)
 
 We will define separate `ThemeData` for light and dark modes. The color palette will be mapped to the standard `ColorScheme`.
 
@@ -184,43 +137,108 @@ final lightTheme = ThemeData(colorScheme: _lightColorScheme, /* ... other theme 
 final darkTheme = ThemeData(colorScheme: _darkColorScheme, /* ... other theme properties */);
 ```
 
-To use a theme color: `Theme.of(context).colorScheme.primary`.
+#### Color Usage Rules:
+- ✅ **REQUIRED**: `Theme.of(context).colorScheme.primary`
+- ✅ **REQUIRED**: `theme.colorScheme.surface`
+- ❌ **FORBIDDEN**: `Color(0xFF7F56D9)` or any hardcoded colors
+- ❌ **FORBIDDEN**: `Colors.blue` or Material color constants
 
-## 6. Spacing & Layout
+#### Semantic Color Usage:
+- **Primary Actions**: `colorScheme.primary`
+- **Secondary Actions**: `colorScheme.secondary`  
+- **Error States**: `colorScheme.error`
+- **Success States**: Custom success colors from palette
+- **Warning States**: Custom warning colors from palette
+- **Surfaces**: `colorScheme.surface`, `colorScheme.surfaceVariant`
+- **Backgrounds**: `colorScheme.background`, `colorScheme.surfaceContainerLowest`
 
-Use a consistent spacing scale for all margins, paddings, and gaps. This ensures visual harmony. The base unit is 4 pixels.
+---
 
-- `spaceXXS`: 2px
-- `spaceXS`: 4px
-- `spaceS`: 8px
-- `spaceM`: 12px
-- `spaceL`: 16px
-- `spaceXL`: 24px
-- `spaceXXL`: 32px
-- `spaceXXXL`: 48px
+## 3. Spacing & Layout
 
-Create a file `lib/core/constants/spacing.dart` with these values.
+### 🚨 MANDATORY SPACING SYSTEM 🚨
 
-## 7. Typography
+**Use ONLY predefined spacing constants. NO hardcoded spacing values allowed.**
 
-Define a `TextTheme` in `ThemeData` for all text styles. Use a scalable and readable font, such as Google Fonts' "Inter".
-
-**Example `TextTheme` configuration:**
-
+#### Spacing Scale (4px base unit):
 ```dart
-// Inside ThemeData
-textTheme: const TextTheme(
-  displayLarge: TextStyle(fontSize: 57.0, fontWeight: FontWeight.bold),
-  headlineMedium: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w600),
-  bodyLarge: TextStyle(fontSize: 16.0),
-  labelSmall: TextStyle(fontSize: 11.0, letterSpacing: 0.5),
-  // ... define all styles
-),
+// lib/core/constants/spacing.dart
+class AppSpacing {
+  static const double spaceXXS = 2.0;   // 2px
+  static const double spaceXS = 4.0;    // 4px  
+  static const double spaceS = 8.0;     // 8px
+  static const double spaceM = 12.0;    // 12px
+  static const double spaceL = 16.0;    // 16px
+  static const double spaceXL = 24.0;   // 24px
+  static const double spaceXXL = 32.0;  // 32px
+  static const double spaceXXXL = 48.0; // 48px
+}
 ```
 
-To use a text style: `Theme.of(context).textTheme.bodyLarge`.
+#### Usage Rules:
+- ✅ **REQUIRED**: `EdgeInsets.all(AppSpacing.spaceL)`
+- ✅ **REQUIRED**: `SizedBox(height: AppSpacing.spaceM)`
+- ❌ **FORBIDDEN**: `EdgeInsets.all(16.0)` or any hardcoded values
 
-## 8. Fonts & Custom Typography
+#### Layout Guidelines:
+- **Touch Targets**: Minimum 48x48dp for interactive elements
+- **Content Padding**: Use `spaceL` (16px) for screen edges
+- **Component Spacing**: Use `spaceM` (12px) between related elements
+- **Section Spacing**: Use `spaceXL` (24px) between sections
+
+---
+
+## 4. Typography
+
+### 🚨 MANDATORY TYPOGRAPHY SYSTEM 🚨
+
+**Use ONLY theme text styles. NO hardcoded font sizes or weights allowed.**
+
+#### Typography Scale:
+```dart
+// lib/app/theme/app_theme.dart
+static const TextTheme textTheme = TextTheme(
+  // Display styles (largest)
+  displayLarge: TextStyle(fontSize: 57.0, fontWeight: FontWeight.bold),
+  displayMedium: TextStyle(fontSize: 45.0, fontWeight: FontWeight.bold),
+  displaySmall: TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold),
+  
+  // Headline styles
+  headlineLarge: TextStyle(fontSize: 32.0, fontWeight: FontWeight.w600),
+  headlineMedium: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w600),
+  headlineSmall: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600),
+  
+  // Title styles
+  titleLarge: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w500),
+  titleMedium: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
+  titleSmall: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500),
+  
+  // Body styles
+  bodyLarge: TextStyle(fontSize: 16.0, fontWeight: FontWeight.normal),
+  bodyMedium: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal),
+  bodySmall: TextStyle(fontSize: 12.0, fontWeight: FontWeight.normal),
+  
+  // Label styles
+  labelLarge: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500),
+  labelMedium: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500),
+  labelSmall: TextStyle(fontSize: 11.0, fontWeight: FontWeight.w500),
+);
+```
+
+#### Usage Rules:
+- ✅ **REQUIRED**: `Text('Hello', style: theme.textTheme.bodyLarge)`
+- ✅ **REQUIRED**: `theme.textTheme.headlineSmall?.copyWith(color: theme.colorScheme.primary)`
+- ❌ **FORBIDDEN**: `TextStyle(fontSize: 16.0)` or any hardcoded styles
+
+#### Text Color Guidelines:
+- **Primary Text**: `theme.colorScheme.onSurface`
+- **Secondary Text**: `theme.colorScheme.onSurfaceVariant`
+- **Disabled Text**: `theme.disabledColor`
+- **Error Text**: `theme.colorScheme.error`
+
+---
+
+## 5. Fonts & Custom Typography
 
 ### Font Management
 All fonts must be properly organized and declared in `pubspec.yaml`.
@@ -258,40 +276,57 @@ flutter:
 - ✅ **Consistent weights**: Limit to 4-5 font weights maximum
 - ❌ **Never hardcode**: Font families in individual widgets
 
-## 9. Assets Management
+---
 
-### Directory Structure
+## 6. Assets Management
+
+### 🚨 MANDATORY ASSETS ORGANIZATION 🚨
+
 ```
 assets/
-├── fonts/              # Custom fonts
-├── images/             # App images and graphics
-│   ├── icons/          # Custom app icons
+├── fonts/              # Custom fonts only
+├── images/             # All visual assets
+│   ├── icons/          # Custom app icons (SVG preferred)
 │   ├── illustrations/  # Illustrations and graphics
-│   ├── logos/          # Brand logos
+│   ├── logos/          # Brand logos and identity
 │   └── backgrounds/    # Background images
-├── animations/         # Lottie/Rive animations
-└── data/              # JSON/CSV data files
+└── animations/         # Lottie/Rive animations
 ```
 
 ### Asset Declaration Rules
-**pubspec.yaml:**
 ```yaml
+# pubspec.yaml
 flutter:
   assets:
     - assets/images/
     - assets/images/icons/
     - assets/images/illustrations/
+    - assets/images/logos/
+    - assets/images/backgrounds/
     - assets/animations/
-    - assets/data/
 ```
 
 ### Asset Naming Convention
 - ✅ **snake_case**: `user_avatar_placeholder.png`
 - ✅ **Descriptive names**: `onboarding_welcome_illustration.svg`
 - ✅ **Size suffixes**: `logo_small.png`, `logo_large.png`
-- ❌ **Generic names**: `image1.png`, `icon.svg`
+- ✅ **Purpose prefix**: `ic_home.svg`, `bg_login.jpg`, `ill_welcome.svg`
+- ❌ **Generic names**: `image1.png`, `icon.svg`, `graphic.png`
 
-## 10. Images & Graphics
+### Asset Constants
+```dart
+// lib/core/constants/app_images.dart
+class AppImages {
+  static const String logoMain = 'assets/images/logos/app_logo.svg';
+  static const String backgroundLogin = 'assets/images/backgrounds/login_bg.jpg';
+  static const String iconHome = 'assets/images/icons/ic_home.svg';
+  static const String illustrationWelcome = 'assets/images/illustrations/ill_welcome.svg';
+}
+```
+
+---
+
+## 7. Images & Graphics
 
 ### Image Formats & Optimization
 - ✅ **SVG**: Vector graphics, icons, simple illustrations
@@ -344,7 +379,9 @@ CachedNetworkImage(
 Image.network('https://example.com/image.jpg')
 ```
 
-## 11. Icons & Iconography
+---
+
+## 8. Icons & Iconography
 
 ### Icon System Guidelines
 - ✅ **Material Icons**: Primary icon system
@@ -410,7 +447,9 @@ SvgPicture.asset('assets/images/icons/navigation/ic_home.svg')
 - ✅ **Color contrast**: Ensure sufficient contrast ratios
 - ✅ **Alternative text**: For screen readers
 
-## 12. Internationalization (i18n) & RTL Support
+---
+
+## 9. Internationalization (i18n) & RTL Support
 
 The app must support multiple languages, including Right-to-Left (RTL) languages like Arabic.
 
@@ -459,4 +498,53 @@ grep -r 'content: Text(' lib/
 
 **REMEMBER: No hardcoded strings means NO EXCEPTIONS. Quality and internationalization are non-negotiable.**
 
-By following these rules strictly, we will build a robust, beautiful, and maintainable multilingual application.
+---
+
+## 🚨 DESIGN SYSTEM COMPLIANCE CHECKLIST
+
+### ❌ ZERO TOLERANCE VIOLATIONS
+
+- ❌ **FORBIDDEN**: Hardcoded colors (`Color(0xFF...)`, `Colors.blue`)
+- ❌ **FORBIDDEN**: Hardcoded spacing (`EdgeInsets.all(16.0)`)
+- ❌ **FORBIDDEN**: Hardcoded typography (`TextStyle(fontSize: 16.0)`)
+- ❌ **FORBIDDEN**: Hardcoded strings (`Text('Hello')`)
+- ❌ **FORBIDDEN**: Direct asset paths in widgets
+- ❌ **FORBIDDEN**: Non-theme color usage anywhere
+
+### ✅ MANDATORY REQUIREMENTS
+
+- ✅ **REQUIRED**: All colors from `theme.colorScheme.*`
+- ✅ **REQUIRED**: All spacing from `AppSpacing.*` constants
+- ✅ **REQUIRED**: All typography from `theme.textTheme.*`
+- ✅ **REQUIRED**: All strings from `AppLocalizations.of(context)!.*`
+- ✅ **REQUIRED**: All assets through defined constants
+- ✅ **REQUIRED**: Proper light/dark theme support
+- ✅ **REQUIRED**: RTL layout support with `EdgeInsetsDirectional`
+- ✅ **REQUIRED**: Accessibility compliance (contrast, touch targets)
+
+### 📋 PRE-COMMIT VERIFICATION
+
+Run these commands to verify compliance:
+
+```bash
+# Check for hardcoded colors
+grep -r "Color(0x" lib/
+grep -r "Colors\." lib/
+
+# Check for hardcoded strings  
+grep -r "Text('.*')" lib/
+grep -r 'Text(".*")' lib/
+
+# Check for hardcoded spacing
+grep -r "EdgeInsets\.all([0-9]" lib/
+grep -r "SizedBox(height: [0-9]" lib/
+
+# Check for hardcoded fonts
+grep -r "TextStyle(" lib/ | grep "fontSize:"
+```
+
+**All commands MUST return ZERO results for design system compliance.**
+
+---
+
+**These design system rules ensure visual consistency, maintainability, and professional UI/UX quality across the entire Sikila Flutter application.**

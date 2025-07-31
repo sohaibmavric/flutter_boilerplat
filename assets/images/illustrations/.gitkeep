@@ -1,0 +1,8 @@
+# This file ensures the directory is tracked by git
+# Illustrations directory for SVG/PNG illustrations following naming convention:
+# - descriptive_name_illustration.svg
+# - welcome_illustration.svg, empty_state_posts.svg, etc.
+#
+# For splash screen:
+# - splash_background.svg (optional background pattern)
+# - welcome_illustration.svg (welcome graphics)

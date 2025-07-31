@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import '../l10n/generated/app_localizations.dart';
 import '../../screens/dashboard/dashboard_screen.dart';
-import '../../screens/settings/settings_screen.dart';
+import '../../screens/log/log_screen.dart';
+import '../../screens/explore/explore_screen.dart';
+import '../../screens/profile/profile_screen.dart';
 
 /// Main navigation wrapper with bottom navigation bar
-/// Handles navigation between dashboard and settings screens
+/// Handles navigation between dashboard, log, explore, and profile screens
 class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
 
@@ -17,7 +19,9 @@ class _MainNavigationState extends State<MainNavigation> {
 
   final List<Widget> _screens = [
     const DashboardScreen(),
-    const SettingsScreen(),
+    const LogScreen(),
+    const ExploreScreen(),
+    const ProfileScreen(),
   ];
 
   @override
@@ -53,9 +57,19 @@ class _MainNavigationState extends State<MainNavigation> {
             label: l10n.dashboard,
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.settings_outlined),
-            activeIcon: const Icon(Icons.settings),
-            label: l10n.settings,
+            icon: const Icon(Icons.add_circle_outline),
+            activeIcon: const Icon(Icons.add_circle),
+            label: l10n.log,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.explore_outlined),
+            activeIcon: const Icon(Icons.explore),
+            label: l10n.explore,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.person_outline),
+            activeIcon: const Icon(Icons.person),
+            label: l10n.profile,
           ),
         ],
       ),
